@@ -91,5 +91,6 @@ public class SystemSettings {
         Settings.System.NOTIFICATION_LIGHT_PULSE,
         Settings.System.TORCH_POWER_BUTTON_GESTURE,
         Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
+        Settings.System.LOCK_HIDE_STATUS_BAR,
     };
 }
