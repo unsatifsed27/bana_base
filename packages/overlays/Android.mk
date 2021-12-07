@@ -36,6 +36,7 @@ LOCAL_REQUIRED_MODULES := \
 	NavigationBarModeGesturalOverlayNarrowBack \
 	NavigationBarModeGesturalOverlayWideBack \
 	NavigationBarModeGesturalOverlayExtraWideBack \
+    	NavigationBarModeGesturalOverlayFS \
         NotchBarKillerOverlay \
 	NotchBarKillerLeftrOverlay \
 	preinstalled-packages-platform-overlays.xml
