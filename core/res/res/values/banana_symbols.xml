@@ -257,4 +257,9 @@
     <!-- Settings Restart -->
     <java-symbol type="string" name="settings_restart_title" />
     <java-symbol type="string" name="settings_restart_message" />
+
+    <!-- Notification light mappings -->
+    <java-symbol type="array" name="notification_light_package_mapping" />
+    <!-- On-device lights (LED) capabilities -->
+    <java-symbol type="integer" name="config_deviceLightCapabilities" />
 </resources>
