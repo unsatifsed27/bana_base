@@ -3571,6 +3571,9 @@ public final class DisplayManagerService extends SystemService {
                     if ((flags & DisplayDeviceInfo.FLAG_NEVER_BLANK) == 0) {
                         final DisplayPowerController displayPowerController =
                                 mDisplayPowerControllers.get(id);
+                        if (displayPowerController == null) {
+                            continue;
+                        }
                         ready &= displayPowerController.requestPowerState(request,
                                 waitForNegativeProximity);
                     }
