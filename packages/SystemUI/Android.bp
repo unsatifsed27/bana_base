@@ -129,6 +129,7 @@ android_library {
         "colorkt",
         "themelib",
         "faceunlock_framework",
+	"googlebattery-lib",
     ],
     manifest: "AndroidManifest.xml",
 
