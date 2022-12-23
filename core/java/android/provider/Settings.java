@@ -5793,11 +5793,6 @@ public final class Settings {
         public static final String DISPLAY_ANTI_FLICKER = "display_anti_flicker";
 
         /**
-         * @hide
-         */
-        public static final String SECONDARY_COLOR_CLOCK = "use_secondary_color_clock";
-
-        /**
          * Whether the button backlight is only lit when pressed (and not when screen is touched)
          * The value is boolean (1 or 0).
          * @hide
