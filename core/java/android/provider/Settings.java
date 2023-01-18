@@ -6414,6 +6414,11 @@ public final class Settings {
         public static final String QQS_LAYOUT = "qqs_layout";
 
         /**
+         * @hide
+         */
+        public static final String QS_TILE_LABEL_SIZE = "qs_tile_label_size";
+
+        /**
          * Whether the phone vibrates on call connect
          * @hide
          */

@@ -31,6 +31,7 @@ import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.text.TextUtils
 import android.util.Log
+import android.util.TypedValue
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -44,7 +45,6 @@ import android.widget.Switch
 import android.widget.TextView
 import androidx.annotation.VisibleForTesting
 import com.android.settingslib.Utils
-import com.android.systemui.FontSizeUtils
 import com.android.systemui.R
 import com.android.systemui.animation.LaunchableView
 import com.android.systemui.animation.LaunchableViewDelegate
@@ -52,6 +52,7 @@ import com.android.systemui.plugins.qs.QSIconView
 import com.android.systemui.plugins.qs.QSTile
 import com.android.systemui.plugins.qs.QSTile.BooleanState
 import com.android.systemui.plugins.qs.QSTileView
+import com.android.systemui.qs.TileUtils
 import com.android.systemui.qs.tileimpl.QSIconViewImpl.QS_ANIM_LENGTH
 import java.util.Objects
 
@@ -157,6 +158,7 @@ open class QSTileViewImpl @JvmOverloads constructor(
     private var vertical = false
     private val forceHideCheveron = true
     private var labelHide = false
+    private var labelSize = 14f
 
     init {
         setId(generateViewId())
@@ -170,6 +172,7 @@ open class QSTileViewImpl @JvmOverloads constructor(
         }
 
         labelHide = QSLayoutUtils.getQSTileLabelHide(context)
+        labelSize = TileUtils.getQSTileLabelSize(context)
 
         if (labelHide)
             gravity = Gravity.CENTER_HORIZONTAL or Gravity.CENTER_VERTICAL
@@ -208,8 +211,8 @@ open class QSTileViewImpl @JvmOverloads constructor(
     }
 
     fun updateResources() {
-        FontSizeUtils.updateFontSize(label, R.dimen.qs_tile_text_size)
-        FontSizeUtils.updateFontSize(secondaryLabel, R.dimen.qs_tile_text_size)
+        label.setTextSize(TypedValue.COMPLEX_UNIT_SP, labelSize)
+        secondaryLabel.setTextSize(TypedValue.COMPLEX_UNIT_SP, labelSize)
 
         val iconSize = context.resources.getDimensionPixelSize(R.dimen.qs_icon_size)
         _icon.layoutParams.apply {

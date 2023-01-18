@@ -68,6 +68,8 @@ public abstract class QSPanelControllerBase<T extends QSPanel> extends ViewContr
             "system:" + Settings.System.QS_TILE_LABEL_HIDE;
     private static final String QS_TILE_VERTICAL_LAYOUT =
             "system:" + Settings.System.QS_TILE_VERTICAL_LAYOUT;
+    private static final String QS_TILE_LABEL_SIZE =
+            "system:" + Settings.System.QS_TILE_LABEL_SIZE;
 
     private static final String TAG = "QSPanelControllerBase";
     protected final QSTileHost mHost;
@@ -193,6 +195,7 @@ public abstract class QSPanelControllerBase<T extends QSPanel> extends ViewContr
 
         mTunerService.addTunable(this, QS_TILE_LABEL_HIDE);
         mTunerService.addTunable(this, QS_TILE_VERTICAL_LAYOUT);
+        mTunerService.addTunable(this, QS_TILE_LABEL_SIZE);
     }
 
     @Override
@@ -486,6 +489,7 @@ public abstract class QSPanelControllerBase<T extends QSPanel> extends ViewContr
     public void onTuningChanged(String key, String newValue) {
         switch (key) {
             case QS_TILE_VERTICAL_LAYOUT:
+            case QS_TILE_LABEL_SIZE:
             case QS_TILE_LABEL_HIDE:
                 if (mView.getTileLayout() != null) {
                     mView.getTileLayout().updateSettings();
